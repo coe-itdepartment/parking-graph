@@ -161,8 +161,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Parking Garage Capacity Monitor</h1>
-            <div class="subtitle">Real-time parking availability data for City of Easton garages</div>
+            <h1>Parking Garage Capacity Metrics</h1>
         </div>
         
         <div class="info" id="dateInfo">Loading data...</div>
@@ -181,20 +180,15 @@
                 <select id="metric">
                     <option value="occupancyPercentage">Occupancy Percentage</option>
                     <option value="actualCount">Vehicle Count</option>
-                    <option value="availableSpaces">Available Spaces</option>
                 </select>
             </div>
             
-            <button onclick="loadData()">↻ Refresh Data</button>
         </div>
         
         <div class="chart-container">
             <canvas id="parkingChart"></canvas>
         </div>
         
-        <div class="footer">
-            Data updated every 15 minutes | City of Easton, PA
-        </div>
     </div>
 
     <script>
@@ -203,7 +197,7 @@
 
         // Government-friendly color palette
         const colorPalette = {
-            primary: '#1e5a96',    // Government blue
+            primary: '#1e4a72',    // Government blue
             secondary: '#c84630',  // Alert red
             success: '#2d7c4f',    // Green
             warning: '#d68000'     // Orange
@@ -389,7 +383,6 @@
             switch(metric) {
                 case 'occupancyPercentage': return 'Occupancy (%)';
                 case 'actualCount': return 'Number of Vehicles';
-                case 'availableSpaces': return 'Available Spaces';
                 default: return 'Value';
             }
         }
